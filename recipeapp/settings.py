@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get(
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'thawing-oasis-52551-c8ea76680931.herokuapp.com', '127.0.0.1', 'localhost']
+    'salty-headland-07976-f1493a7cebd8.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
