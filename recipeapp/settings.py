@@ -34,7 +34,7 @@ IS_HEROKU_APP = "DYNO" in os.environ and not "CI" in os.environ
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'salty-headland-07976-f1493a7cebd8.herokuapp.com', '127.0.0.1', 'localhost']
+    'salty-headland-07976-f1493a7cebd8.herokuapp.com', '127.0.0.1', 'localhost', '0.0.0.0']
 
 
 # Application definition
