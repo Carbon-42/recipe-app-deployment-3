@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+  <title>CARBON42 Recipes</title>
+  <link rel="stylesheet" type="text/css" href="/static/normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,700;1,100&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<header>
+  <div class="topnav">
+    <a href="/">Home</a>
+    <a href="/list">Recipes</a>
+    <a href ="{%url 'logout' %}"> Logout </a>
+</div>
+</header>
+<body>
+  <div class="recipe-detail-card-container">
+    <div class="detail-card-grid">
+      <div class="detail-card-grid-block">
+          <img src="{{object.pic.url}}" class="recipe-detail-image">
+      </div>
+      <div class="recipe-details detail-card-grid-block">
+        <h3 class="recipe-name">{{object.name}}</h3>
+        <div class="detail-card-description">{{object.description}}</div>
+        <h4>Ingredients: </h4> {{object.ingredients}} <br>
+        <h4>Cooking Time: </h4> {{object.cooking_time}} minutes <br>
+        <h4>Difficulty: </h4> {{object.calc_difficulty}} <br>    
+      </div>
+    </div>  
+  </div>
+</body>
+<footer>
+  <p class="photo-attribution">Images from <a href="https://pixabay.com/">Pixabay</a>.</p>
+</footer>

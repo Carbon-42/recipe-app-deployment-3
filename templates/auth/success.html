@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+  <title>CARBON42 Recipes</title>
+  <link rel="stylesheet" type="text/css" href="/static/normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,700;1,100&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="/static/style.css">
+  <!-- <script src="static/home.js" defer></script> -->
+</head>
+
+<header>
+  <div class="topnav">
+      <a class="active" href="/">Home</a>
+      <a href ="{%url 'login' %}">  Login  </a>
+  </div>
+</header>
+<body>
+  <div class="main-background">
+    <div class="welcome-message">
+      <h1>CARBON 42 RECIPES</h1>
+      <h3>You've successfully logged out. Thanks for coming!</h3>
+    </div>
+  </div>
+</body>
+<footer>
+  <p class="photo-attribution">Images from <a href="https://pixabay.com/">Pixabay</a>.</p>
+</footer>

@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+  <title>CARBON42 Recipes</title>
+  <link rel="stylesheet" type="text/css" href="/static/normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,700;1,100&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="/static/style.css">
+  <!-- <script src="static/home.js" defer></script> -->
+</head>
+
+<header>
+  <div class="topnav">
+    <a href="/">Home</a>
+    <a class="active" href="/list">Recipes</a>
+    <a href ="{%url 'logout' %}"> Logout </a>
+  </div>
+</header>
+<body>
+  <div class="recipe-list-container" >
+    <div class="recipe-card-grid">
+      {% for object in object_list %}
+          <div class="recipe-card" >
+            <div class="recipe-image-container">
+              <a href="{{object.get_absolute_url}}">
+                <img src="{{object.pic.url}}" class="recipe-image">
+              </a>
+            </div>
+            <div class="recipe-card-info">
+              <a href="{{object.get_absolute_url}}">
+                <h4>{{object.name}}</h4>
+              </a>
+              <div class="recipe-description">{{object.description}}</div>
+              <div class="recipe-cooking_time">{{object.cooking_time}} min</div>
+            </div>
+          </div>     
+      {% endfor %} 
+    </div>
+  </div>
+</body>
+<footer>
+  <p class="photo-attribution">Images from <a href="https://pixabay.com/">Pixabay</a>.</p>
+</footer>
