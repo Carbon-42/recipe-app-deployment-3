@@ -45,8 +45,10 @@ def get_chart(chart_type, data, **kwargs):
     if chart_type == '#1':
         # plot bar chart between name on x-axis and cooking_time on y-axis
         fig, ax = plt.subplots()
+        labels = data['name']
         ax.bar(data['name'], data['cooking_time'])
         ax.set_ylabel('Cooking Time (Minutes)')
+        ax.set_xticks(data['name'], labels, rotation='vertical')
 
     elif chart_type == '#2':
         # generate pie chart based on the price.
@@ -59,8 +61,10 @@ def get_chart(chart_type, data, **kwargs):
     elif chart_type == '#3':
         # plot line chart based on date on x-axis and price on y-axis
         fig, ax = plt.subplots()
+        labels = data['name']
         ax.plot(data['name'], data['cooking_time'])
         ax.set_ylabel('Cooking Time (Minutes)')
+        ax.set_xticks(data['name'], labels, rotation='vertical')
     else:
         print('unknown chart type')
 
