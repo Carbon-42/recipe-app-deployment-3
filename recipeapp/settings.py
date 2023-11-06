@@ -149,6 +149,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = '/login/'
 
 # Heroku: Update database configuration from $DATABASE_URL.
-# db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'] = dj_database_url.config(
-    default='postgres: // ixredfqbezbjyd: c039d1d1225f4fced8085881e3cb8f7492b6c08a110ab6337d1fd93e34e406d9@ec2-44-215-40-87.compute-1.amazonaws.com: 5432/ddn0l8298lo4e4')
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
