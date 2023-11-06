@@ -10,7 +10,7 @@ class Recipe(models.Model):
     ingredients = models.CharField(
         max_length=255, help_text='Ingredients must be separated by commas.')
     description = models.TextField()
-    pic = models.ImageField(upload_to='media/', default='no_picture.jpg')
+    pic = models.ImageField(upload_to='recipes', default='no_picture.jpg')
 
     def calc_difficulty(self):
         ingredients = self.ingredients.split(', ')
