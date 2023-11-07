@@ -1,20 +1,36 @@
-<h1> Search for recipe records </h1>
+{% load static %}
 
-<hr>
-<form action="" method="POST">
-   {% csrf_token %}
-   {{form}}
-   <button type="submit" >search</button>
+<!DOCTYPE html>
+<head>
+  <title>CARBON42 Recipes</title>
+  <link rel="stylesheet" type="text/css" href="static/normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,700;1,100&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="static/style.css">
+</head>
 
-</form> 
+<header>
+  <div class="topnav">
+      <a href="/">Home</a>
+      <a href="/list">Recipes</a>
+      <a class="active" href="/records">Records</a>  
+      <a href ="{%url 'logout' %}">  Logout  </a>
+  </div>
+</header>
+<body>
+    <div class="welcome-message">
+      <h2> Search for recipe records </h2>
+      <form action="" method="POST">
+         {% csrf_token %}
+         {{form}}
+         <button type="submit" >search</button>
+      </form> 
+      {% if diff_df %}
+         {{diff_df|safe}} 
 
-<br>
-
-{% if diff_df %}
-   {{diff_df|safe}} 
-
-   <br>
-   <img src="data:image/png;base64, {{chart|safe}}">
-{% else %}
-   <h3> no data</h3>
-{% endif %}
+         <br>
+         <img src="data:image/png;base64, {{chart|safe}}">
+      {% else %}
+         <h3> no data</h3>
+      {% endif %}
+    </div>
+</body>
